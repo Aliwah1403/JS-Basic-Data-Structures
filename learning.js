@@ -56,3 +56,62 @@ let htmlColorNames = (arr) => {
     return arr;
 }
 console.log(htmlColorNames(['Red', 'Green', 'Yellow', 'Blue']));
+
+
+
+// slice()
+// copies or extracts a given number of elements to a new array
+// takes 2 parameters
+// 1: index at which to begin extraction
+// 2: index at which to end extraction(element at this index wont be included)
+
+let weatherConditions = ["rain", "snow", "wind", "clear"];
+let todaysWeather = weatherConditions.slice(1, 3);
+console.log(weatherConditions)
+console.log(todaysWeather);
+
+
+let forecast = (arr) => {
+    return arr.slice(2, 4);
+}
+console.log(forecast(["cold", "rainy", "warm", "sunny", "cool", "thunderstom"]))
+
+
+
+// using spread operator to copy arrays
+let thisArray = [true, true, undefined, false, null];
+let thisArray2 = [...thisArray];
+console.log(thisArray2);
+
+
+
+// the function is supposed to return a new array made up of num copies of arr.
+let copyMachine = (arr, num) => {
+    let newArr = [];
+    while (num >= 1) {
+        newArr.push([...arr]);
+        num--
+    }
+    return newArr;
+}
+console.log(copyMachine([true, false, true], 3));
+
+
+// we can combine arrays with the spread operator
+let thatArray = ['sage', 'parsley', 'thyme', 'sage'];
+let thatArray2 = ['basil', 'cilantro', ...thatArray, 'pepper'];
+console.log(thatArray2);
+
+let spreadOut = () => {
+    let fragment = ['to', 'code'];
+    let sentence = ['learning', ...fragment, 'is', 'fun'];
+    return sentence;
+}
+console.log(spreadOut());
+
+
+
+// indexOf()
+let fruits = ['mango', 'watermelon', 'orange', 'strawberry', 'pineapple'];
+console.log(fruits.indexOf('mango'));
+console.log(fruits.indexOf('pear'));
