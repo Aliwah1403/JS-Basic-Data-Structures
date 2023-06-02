@@ -115,3 +115,48 @@ console.log(spreadOut());
 let fruits = ['mango', 'watermelon', 'orange', 'strawberry', 'pineapple'];
 console.log(fruits.indexOf('mango'));
 console.log(fruits.indexOf('pear'));
+
+function quickCheck(arr, elem) {
+
+    if (arr.indexOf(elem) === -1) {
+        return false;
+    } else {
+        return true;
+    }
+}
+console.log(quickCheck(['squash', 'onions', 'mushrooms'], 'mushrooms'));
+console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+
+
+// iterating through arrays
+function filteredArray(arr, elem) {
+    let newArray = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].indexOf(elem) == -1) {
+            newArray.push(arr[i]);
+        }
+    }
+    return newArray;
+}
+console.log(filteredArray([[10, 8, 3], [14, 6, 23], [3, 18, 6]], 18));
+
+
+
+// complex multi-dimensional arrays
+let nestedArray = [
+    ['deep'],
+    [
+        ['deeper'], ['deeper']
+    ],
+    [
+        [
+            ['deepest'], ['deepest']
+        ],
+        [
+            [
+                ['deepest-est?']
+            ]
+        ]
+    ]
+];
+console.log(nestedArray[2][1][0][0])
