@@ -207,7 +207,79 @@ const fridge = {
     eggs: 12
 }
 
-for(const food in fridge){
+for (const food in fridge) {
     console.log(food, fridge[food])
 }
 
+const users2 = {
+    Alan: {
+        online: false
+    },
+    Jeff: {
+        online: true
+    },
+    Sarah: {
+        online: false
+    }
+}
+function countOnline(allUsers) {
+    let result = 0
+    for (const user in allUsers) {
+        if (allUsers[user].online == true) {
+            result++;
+        }
+    }
+    return result;
+}
+console.log(countOnline(users2))
+
+
+
+// Generate an array of all object keys with Object.keys()
+// this method takes an object as its argument and returns an array of strings representing each property in the object
+const users3 = {
+    Alan: {
+        online: false,
+        age: 12
+    },
+    Jeff: {
+        online: true,
+        age: 23
+    },
+    Sarah: {
+        online: false,
+        age: 33
+    }
+}
+function getArrayOfUsers(obj) {
+    return Object.keys(obj);
+}
+console.log(getArrayOfUsers(users3));
+
+
+
+// Modifying an array stored in an object
+const mainUser = {
+    name: 'John',
+    age: 28,
+    data: {
+        username: 'JohnCoder',
+        joinDate: 'March 16 23',
+        organization: 'codeCamper',
+        friends: [
+            'Sam',
+            'Kira',
+            'Tommy'
+        ],
+        location: {
+            city: 'San Francisco',
+            state: 'CA',
+            country: 'USA'
+        }
+    }
+}
+function addFriend(userObj, friend) {
+    userObj.data.friends.push(friend);
+    return userObj.data.friends;
+}
+console.log(addFriend(mainUser, 'Pete'))
