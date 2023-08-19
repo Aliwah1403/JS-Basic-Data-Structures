@@ -160,3 +160,54 @@ let nestedArray = [
     ]
 ];
 console.log(nestedArray[2][1][0][0])
+
+
+
+// checking if an object has a property
+// we can either use the hasOwnProperty()method
+// or use the "in" keyword
+// eg
+let users = {
+    Alan: {
+        age: 27,
+        online: true
+    },
+    Jeff: {
+        age: 32,
+        online: true
+    },
+    Sarah: {
+        age: 48,
+        online: true
+    },
+    Ryan: {
+        age: 19,
+        online: true
+    }
+};
+
+console.log(users.hasOwnProperty('Ryan'));
+console.log('Alan' in users)
+
+function isEveryoneHere(userObj) {
+    return userObj.hasOwnProperty("Alan") &&
+        userObj.hasOwnProperty("Jeff") &&
+        userObj.hasOwnProperty("Sarah") &&
+        userObj.hasOwnProperty("Ryan");
+}
+console.log(isEveryoneHere(users))
+
+
+
+// Iterate Through the Keys of an Object with a for...in Statement
+// this allows us to iterate through all the keys in an object
+// eg
+const fridge = {
+    milk: 1,
+    eggs: 12
+}
+
+for(const food in fridge){
+    console.log(food, fridge[food])
+}
+
